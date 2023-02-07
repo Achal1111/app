@@ -1,4 +1,3 @@
-import "./App.css";
 import { MoviesList, Navbar } from "../src/components";
 import { Grid, Box } from "@mui/material";
 
