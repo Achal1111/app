@@ -22,31 +22,7 @@ export const movieData = [
     Type: "movie",
     Response: "True",
   },
-  // {
-  //   Title: "I Am Legend",
-  //   Year: "2007",
-  //   Rated: "PG-13",
-  //   Released: "14 Dec 2007",
-  //   Runtime: "101 min",
-  //   Genre: "Drama, Horror, Sci-Fi",
-  //   Director: "Francis Lawrence",
-  //   Writer:
-  //     "Mark Protosevich (screenplay), Akiva Goldsman (screenplay), Richard Matheson (novel), John William Corrington, Joyce Hooper Corrington",
-  //   Actors:
-  //     "Will Smith, Alice Braga, Charlie Tahan, Salli Richardson-Whitfield",
-  //   Plot: "Years after a plague kills most of humanity and transforms the rest into monsters, the sole survivor in New York City struggles valiantly to find a cure.",
-  //   Language: "English",
-  //   Country: "USA",
-  //   Awards: "9 wins & 21 nominations.",
-  //   Poster:
-  //     "https://images-na.ssl-images-amazon.com/images/S/pv-target-images/d0688a1d44131c7239999cad2ceeec122383367b38450c4f0d005127442d7d94._RI_V_TTW_.jpg",
-  //   Metascore: "65",
-  //   imdbRating: "7.2",
-  //   imdbVotes: "533,874",
-  //   imdbID: "tt0480249",
-  //   Type: "movie",
-  //   Response: "True",
-  // },
+
   {
     Title: "300",
     Year: "2006",

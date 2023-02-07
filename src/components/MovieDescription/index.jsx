@@ -1,18 +1,24 @@
-import { Box, Typography, Stack, Grid } from "@mui/material";
+import { Box, Typography, Stack } from "@mui/material";
 import MovieInfo from "../MovieInfo";
 import { COLORS } from "../../constants";
 import { CustomizedContainedButton } from "../ContainedButton";
 import { CustomizedOutlinedButton } from "../OutlinedButton";
 import { BorderLinearProgress } from "../LinearProgressBar";
 import { useEffect, useState } from "react";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const MovieDescription = ({ selectedMovieName, movieList }) => {
+  const theme = useTheme();
+  const isMdBreakpoint = useMediaQuery(
+    `(max-width:${theme.breakpoints.values.sm}px)`
+  );
   const [selectedMovie, setSelectedMovie] = useState([]);
+
   useEffect(() => {
     let duplicateMovieList = [...movieList];
     let filteredMovieList =
       duplicateMovieList.filter((e) => e.Title === selectedMovieName) || [];
-    console.log(filteredMovieList);
     setSelectedMovie(filteredMovieList);
   }, [movieList, selectedMovieName]);
 
@@ -21,31 +27,30 @@ const MovieDescription = ({ selectedMovieName, movieList }) => {
   }
 
   return (
-    <Grid
-      container
+    <Box
       sx={{
+        height: "100%",
+        display: "flex",
+        flexDirection: "row",
         backgroundColor: COLORS.BLUE[100],
         borderRadius: "11px",
         marginBottom: "26px",
+        [theme.breakpoints.down("sm")]: {
+          flexDirection: "column",
+        },
       }}
     >
-      <Grid item xs={6} lg={3}>
+      <Box>
         <img
           src={selectedMovie[0]?.Poster}
           alt="movie-poster"
+          width={!isMdBreakpoint ? 300 : 220}
           style={{
             position: "relative",
           }}
         />
-      </Grid>
-      <Grid
-        item
-        xs={6}
-        lg={6}
-        sx={{
-          marginLeft: "90px",
-        }}
-      >
+      </Box>
+      <Box sx={{ marginLeft: "35px" }}>
         <Typography
           sx={{
             marginTop: "34px",
@@ -94,8 +99,8 @@ const MovieDescription = ({ selectedMovieName, movieList }) => {
           <CustomizedContainedButton>Play Movie</CustomizedContainedButton>
           <CustomizedOutlinedButton>Watch Trailer</CustomizedOutlinedButton>
         </Stack>
-      </Grid>
-    </Grid>
+      </Box>
+    </Box>
   );
 };
 export default MovieDescription;

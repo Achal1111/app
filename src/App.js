@@ -1,22 +1,56 @@
 import { MoviesList, Navbar } from "../src/components";
-import { Grid, Box } from "@mui/material";
+import { Box } from "@mui/material";
+import { createTheme, colors, ThemeProvider } from "@mui/material";
+
+const theme = createTheme({
+  palette: {
+    secondary: {
+      main: colors.orange[500],
+    },
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+    },
+  },
+});
 
 function App() {
   return (
-    <Box
-      sx={{
-        height: "100%",
-      }}
-    >
-      <Grid container>
-        <Grid item xs={3} lg={3}>
+    <ThemeProvider theme={theme}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+        }}
+      >
+        <Box
+          sx={{
+            width: "20%",
+            [theme.breakpoints.down("md")]: {
+              display: "none",
+            },
+          }}
+        >
           <Navbar />
-        </Grid>
-        <Grid item xs={9} lg={9}>
+        </Box>
+
+        <Box
+          sx={{
+            width: "80%",
+            [theme.breakpoints.down("md")]: {
+              width: "100%",
+            },
+          }}
+        >
           <MoviesList />
-        </Grid>
-      </Grid>
-    </Box>
+        </Box>
+      </Box>
+    </ThemeProvider>
   );
 }
 
