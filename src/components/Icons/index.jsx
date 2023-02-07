@@ -1,0 +1,12 @@
+export { default as PlayButtonIcon } from "./PlayButtonIcon";
+export { default as AddToPlaylistIcon } from "./AddToPlaylistIcon";
+export { default as PlaylistIcon } from "./PlaylistIcon";
+export { default as MovieIcon } from "./MovieIcon";
+export { default as TVShowIcon } from "./TVShowIcon";
+export { default as MyListIcon } from "./MyListIcon";
+export { default as DiscoverIcon } from "./DiscoverIcon";
+export { default as LogoutIcon } from "./LogoutIcon";
+export { default as WatchLaterIcon } from "./WatchLaterIcon";
+export { default as RecomendedIcon } from "./RecomemdedIcon";
+export { default as SettingsIcon } from "./SettingsIcon";
+export { default as SearchIcon } from "./SearchIcon";
